@@ -9,22 +9,22 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.formacionbdi.springboot.app.usuarios</groupId>
+	<groupId>com.maverick.usuarios</groupId>
 	<artifactId>springboot-servicio-usuarios</artifactId>
-	<version>1.0.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>springboot-servicio-usuarios</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Servidior usuarios</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+		<spring-cloud.version>Hoxton.BUILD-SNAPSHOT</spring-cloud.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.formacionbdi.springboot.app.commons.usuarios</groupId>
-			<artifactId>springboot-servicio-commons-usuarios</artifactId>
-			<version>1.0.0</version>
+			<groupId>com.maverick.commons.usuarios</groupId>
+			<artifactId>springboot-servicio-commons-usuario</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,6 +65,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -87,5 +96,21 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
 
 </project>
